@@ -5,7 +5,7 @@ import Footer from '../components/home/Footer';
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col h-screen">
       <Head>
         <title>Google</title>
         <meta
@@ -15,8 +15,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {/* <Body /> */}
-      {/* <Footer /> */}
+      <Body />
+      <Footer />
     </div>
   );
 }
