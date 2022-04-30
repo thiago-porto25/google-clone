@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Searchbar from './Searchbar';
 import SearchButton from './SearchButton';
 
+import googleLogo from '../../public/google-logo.png';
+
 export default function Body() {
   const [search, setSearch] = useState('');
   const router = useRouter();
@@ -27,12 +29,7 @@ export default function Body() {
         action="POST"
         className="flex items-center flex-col flex-grow mt-44 px-6"
       >
-        <Image
-          src="/images/google-logo.png"
-          alt="Google logo"
-          height={100}
-          width={300}
-        />
+        <Image src={googleLogo} alt="Google logo" height={100} width={300} />
         <Searchbar value={search} onChange={handleChange} />
         <div className="flex justify-center mt-8 space-x-4">
           <SearchButton type="submit">Google Search</SearchButton>

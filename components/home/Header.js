@@ -1,6 +1,8 @@
 import { ViewGridIcon } from '@heroicons/react/solid';
 import Avatar from '../common/Avatar';
 
+import defaultAvatar from '../../public/avatar.jpg';
+
 export default function Header() {
   return (
     <header className="flex items-center justify-between w-full p-5 text-sm text-gray-700">
@@ -66,7 +68,7 @@ export default function Header() {
               target="_blank"
               rel="noreferrer"
             >
-              <Avatar url="/images/avatar.jpg" />
+              <Avatar url={defaultAvatar} />
             </a>
           </li>
         </ul>

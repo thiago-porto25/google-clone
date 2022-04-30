@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Searchbar from './Searchbar';
 import HeaderOptions from './HeaderOptions';
 import Avatar from '../common/Avatar';
+
+import googleLogo from '../../public/google-logo.png';
 
 export default function Header() {
   const [search, setSearch] = useState('');
@@ -23,6 +25,10 @@ export default function Header() {
 
   const handleClear = () => setSearch('');
 
+  useEffect(() => {
+    if (router.query.q) setSearch(router.query.q);
+  }, [router.query.q]);
+
   return (
     <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 items-center">
@@ -30,7 +36,7 @@ export default function Header() {
           <a>
             <Image
               className="cursor-pointer"
-              src="/images/google-logo.png"
+              src={googleLogo}
               alt="google logo"
               width={120}
               height={40}
