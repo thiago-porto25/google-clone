@@ -8,6 +8,7 @@ import HeaderOptions from './HeaderOptions';
 import Avatar from '../common/Avatar';
 
 import googleLogo from '../../public/google-logo.png';
+import defaultAvatar from '../../public/avatar.jpg';
 
 export default function Header() {
   const [search, setSearch] = useState('');
@@ -53,7 +54,7 @@ export default function Header() {
           className="ml-auto cursor-pointer rounded-full transition duration-150 transform hover:scale-110 hover:opacity-75"
           href="http://thiagoporto.tech"
         >
-          <Avatar url="/images/avatar.jpg" />
+          <Avatar url={defaultAvatar} />
         </a>
       </div>
       <HeaderOptions />
